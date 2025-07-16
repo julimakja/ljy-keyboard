@@ -1,81 +1,9 @@
-store(&VERSION) "16.0"
-store(&TARGETS) "iphone"
-store(&NAME) "Special Characters Keyboard"
-store(&COPYRIGHT) "© 2025"
-store(&KEYBOARDVERSION) "1.3"
+store(&version) '19.0'
+store(&NAME) 'LJY'
+store(&COPYRIGHT) 'Copyright © 2025 Max Rush'
 
-touch layout {
-    layer "default" {
-        row1: 'q' 'w' 'e' 'r' 't' 
-              'y' { longpress: ['ý' 'ÿ' 'ỳ'] } 
-              'u' { longpress: ['ú' 'ù'] } 
-              'i' { longpress: ['í' 'ì' 'ï' 'ı'] } 
-              'o' { longpress: ['ó' 'ò' 'ö'] } 
-              'p'
-        
-        row2: 'a' { longpress: ['á' 'à' 'ä'] }
-              's' { longpress: ['ſ'] }
-              'd' { longpress: ['đ'] }
-              'f'
-              'g' { longpress: ['ġ'] }
-              'h'
-              'j'
-              'k' { longpress: ['ĸ'] }
-              'l' { longpress: ['ł'] }
-        
-        row3: shiftkey
-              'z' 'x' 'c' 'v'
-              'b' { longpress: ['ƃ'] }
-              'n'
-              'm'
-              backspace
-        
-        row4: numkey
-              nextkey
-              space
-              done
-    }
+begin Unicode use(Main)
+group(Main) using keys
 
-    layer "shift" {
-        row1: 'Q' 'W' 'E' 'R' 'T' 
-              'Y' { longpress: ['Ý' 'Ÿ' 'Ỳ'] }
-              'U' { longpress: ['Ú' 'Ù'] }
-              'I' { longpress: ['Í' 'Ì' 'Ï'] }
-              'O' { longpress: ['Ó' 'Ò' 'Ö'] }
-              'P'
-        
-        row2: 'A' { longpress: ['Á' 'À' 'Ä'] }
-              'S'  // Regular S (no longpress needed)
-              'D' { longpress: ['Đ'] }
-              'F'
-              'G' { longpress: ['Ġ'] }
-              'H'
-              'J'
-              'K' { longpress: ['ĸ'] }
-              'L' { longpress: ['Ł'] }
-        
-        row3: shiftkey
-              'Z' 'X' 'C' 'V'
-              'B' { longpress: ['Ƃ'] }
-              'N'
-              'M'
-              backspace
-        
-        row4: numkey
-              nextkey
-              space
-              done
-    }
-
-    layer "numeric" {
-        row1: '1' '2' '3' '4' '5' '6' '7' '8' '9' '0'
-        row2: '@' '#' '$' '%' '&' '*' '-' '+' '(' ')'
-        row3: symkey
-              '!' '"' '\'' ':' ';' '/' '?' 
-              backspace
-        row4: layer("default")
-              nextkey
-              space
-              done
-    }
-}
++ 'b' > 'ƃ'
++ 'B' > 'Ƃ'
