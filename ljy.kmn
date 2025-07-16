@@ -1,88 +1,71 @@
-store(&VERSION) "10.0"
+store(&VERSION) "16.0"
 store(&TARGETS) "iphone"
 store(&NAME) "LJY Keyboard"
-store(&COPYRIGHT) "Max Rush"
+store(&COPYRIGHT) "© Max Rush"
 store(&KEYBOARDVERSION) "1.0"
 
 begin Unicode > use(main)
 
 touch layout layer "default" {
-	row1:
-		'q' 'w' 'e' 'r'
-		't' { longpress: ['ŧ'] }
-		'y' { longpress: ['ý', 'ỳ', 'ÿ'] }
-		'u' { longpress: ['ú', 'ù'] }
-		'i' { longpress: ['ı', 'ì', 'í', 'ï'] }
-		'o' { longpress: ['ö'] }
-		'p'
-	row2:
-		'a' { longpress: ['à', 'á', 'ä'] }
-		's' { longpress: ['ſ'] }
-		'd' { longpress: ['đ'] }
-		'f'
-		'g' { longpress: ['ġ'] }
-		'h'
-		'j'
-		'k' { longpress: ['ĸ'] }
-        'l' { longpress: ['ł'] }
-	row3:
-		shift
-		'z'
-		'x'
-		'c'
-		'v'
-		'b' { longpress: ['ƃ'] }
-		'n'
-		'm'
-		keyboard
-		nextkey
-		space
-		return
+    row1: 'q' 'w' 'e' 'r' 't' 'y' { longpress: ['ý', 'ÿ', 'ỳ'] } 
+          'u' { longpress: ['ú', 'ù'] } 
+          'i' { longpress: ['í', 'ì', 'ï', 'ı'] } 
+          'o' { longpress: ['ó', 'ò', 'ö', 'õ'] } 
+          'p'
+    
+    row2: 'a' { longpress: ['á', 'à', 'ä', 'â'] }
+          's' { longpress: ['ß', 'ſ'] }
+          'd' { longpress: ['đ', 'ð'] }
+          'f' 'g' { longpress: ['ġ', 'ğ'] }
+          'h' 'j' 'k' { longpress: ['ĸ'] }
+          'l' { longpress: ['ł'] }
+    
+    row3: shift
+          'z' 'x' 'c' 'v'
+          'b' { longpress: ['ƃ'] }
+          'n' 'm'
+          backspace
+    
+    row4: numkey
+          nextkey
+          space { longpress: [NBSP] }
+          done
+}
+
 touch layout layer "shift" {
-    row1: 
-        'Q' 'W' 'E' 'R' 
-        'T' { longpress: ['Ŧ'] }
-        'Y' { longpress: ['Ý', 'Ỳ', 'Ÿ'] }
-        'U' { longpress: ['Ú', 'Ù'] }
-        'I' { longpress: ['Ï', 'Í', 'Ì'] }
-        'O' { longpress: ['Ö'] }
-        'P'
-    row2: 
-        'A' { longpress: ['Á', 'À', 'Ä'] }
-        'S' 
-        'D' { longpress: ['Đ'] }
-        'F'
-        'G' { longpress: ['Ġ'] }
-        'H'
-        'J'
-        'K' { longpress: ['ĸ'] }  // Uppercase same
-        'L' { longpress: ['Ł'] }
-    row3: 
-        shift
-        'Z'
-        'X'
-        'C'
-        'V'
-        'B' { longpress: ['Ƃ'] }
-        'N'
-        'M'
-        backspace
-    row4: 
-        keyboard
-        nextkey
-        space
-        return
+    row1: 'Q' 'W' 'E' 'R' 'T' 'Y' { longpress: ['Ý', 'Ÿ', 'Ỳ'] }
+          'U' { longpress: ['Ú', 'Ù'] }
+          'I' { longpress: ['Í', 'Ì', 'Ï'] }  // Note: 'I' used for uppercase dotless i
+          'O' { longpress: ['Ó', 'Ò', 'Ö', 'Õ'] }
+          'P'
+    
+    row2: 'A' { longpress: ['Á', 'À', 'Ä', 'Â'] }
+          'S' { longpress: ['§', 'Š'] }  // Uppercase ſ is regular S
+          'D' { longpress: ['Đ', 'Ð'] }
+          'F' 'G' { longpress: ['Ġ', 'Ğ'] }
+          'H' 'J' 'K' { longpress: ['ĸ'] }  // Uppercase same as lowercase
+          'L' { longpress: ['Ł'] }
+    
+    row3: shift
+          'Z' 'X' 'C' 'V'
+          'B' { longpress: ['Ƃ'] }
+          'N' 'M'
+          backspace
+    
+    row4: numkey
+          nextkey
+          space { longpress: [NBSP] }
+          done
 }
 
 touch layout layer "numeric" {
     row1: '1' '2' '3' '4' '5' '6' '7' '8' '9' '0'
-    row2: '@' '#' '$' '&' '*' '-' '+' '(' ')' '\''
-    row3: alt
-        '%' '"' '!' '?' ',' '.' ';' ':' '/'
-        backspace
-    row4:
-		keyboard
-        nextkey
-        space
-        return
+    row2: '@' '#' '$' '%' '&' '*' '-' '+' '(' ')'
+    row3: sym
+          '!' '"' '\'' ':' ';' '/' '?' '¿' '¡' '€'
+          backspace
+    row4: layer("default")
+          nextkey
+          space
+          done
 }
